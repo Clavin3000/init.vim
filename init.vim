@@ -1,5 +1,5 @@
 set number
-set mouse=a
+set mouse=
 syntax enable
 set showcmd
 set encoding=utf-8
@@ -13,14 +13,16 @@ call plug#begin('~/.vim/plugged')
 "TEMAS GRUVBOX
 Plug 'sainnhe/gruvbox-material'
 
-"LSP
+"LSP (sirve para instalar los autocompletados)
 Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 
-
 "vim tmux
 Plug 'christoomey/vim-tmux-navigator'
+
+"Polyglot (para el resaltado de syntaxis)
+Plug 'sheerun/vim-polyglot'
 
 "plugins para javascript
 Plug 'pangloss/vim-javascript'
@@ -29,6 +31,13 @@ Plug 'maxmellon/vim-jsx-pretty'
 "snippets para javascript
 "Plug 'SirVer/ultisnips'
 "Plug 'mlaursen/vim-react-snippets'
+
+"plugins para HTML
+
+
+"plugins para CSS
+
+
 
 "EMMET
 Plug 'mattn/emmet-vim'
@@ -39,11 +48,21 @@ Plug 'tpope/vim-commentary'
 "linea de identación
 Plug 'Yggdroot/indentLine'
 
-Plug 'vim-airline/vim-airline'
+"barra de estado de vim
+"Plug 'vim-airline/vim-airline'
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
 
+
+"NERDTree
 Plug 'scrooloose/nerdtree'
 
+"Iconos para nerdtree
 Plug 'ryanoasis/vim-devicons'
+
+"Typing
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag' "NO FUNCIONA, REVIZAR
 
 call plug#end()
 
@@ -84,16 +103,11 @@ nnoremap <C-D> :Prettier<CR>
 vnoremap <space>/ :Commentary<CR> 
 
 "Configuración autocompletado de parentesis
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
+"inoremap < <><Esc>i
 "inoremap {<CR> {<CR>}<Esc>0
 
 " configuración de airline
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 "NERDTREE Configuration
 let NERDTreeQuitOnOpen=1
@@ -281,13 +295,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-
-
-
-
-
-
-
-
-
